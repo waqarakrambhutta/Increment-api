@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Karachi'
 
 USE_I18N = True
 
@@ -134,10 +134,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CELERY_BROKER_URL = 'redis://localhost:8080/1'
 
 CELERY_BEAT_SCHEDULE = {
-    'add_to_counter' : {
-        'task' : 'counter.tasks.add_to_counter',
+    'store_counter_history' : {
+        'task' : 'counter.tasks.store_counter_history',
         'schedule': timedelta(minutes=1),
-        'args':(8,),
+
     }
 }
 
